@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Family Fantasy League 2026 | Zamora Family</title>
+  <title>Family Fantasy Football League 2026</title>
   <style>
     :root {
       --bg: #080b12;
@@ -88,15 +88,34 @@
       letter-spacing: 0.04em;
     }
 
-    #countdown-value {
+    .timer-grid {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .timer-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timer-val {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: clamp(1.2rem, 4.2vw, 2rem);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
       font-weight: 700;
-      margin: 0.2rem 0 0;
+      color: #ffffff;
+    }
+
+    .timer-unit {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     #countdown-note {
-      margin: 0.45rem 0 0;
+      margin: 0.8rem 0 0;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -135,7 +154,6 @@
       color: #e8f9ff;
     }
 
-    /* Join section */
     .join {
       padding: 1.25rem 1.3rem;
     }
@@ -146,7 +164,7 @@
     }
 
     .join-desc {
-      margin: 0 0 0.25rem;
+      margin: 0 0 0.5rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -195,7 +213,6 @@
       flex-shrink: 0;
     }
 
-    /* Guide section */
     .guide {
       padding: 1.25rem 1.3rem;
     }
@@ -229,6 +246,54 @@
       color: var(--accent);
     }
 
+    /* Interactive Checklist Styling */
+    .checklist-ul {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .check-item input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      background: rgba(5, 15, 23, 0.62);
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .check-item input[type="checkbox"]:checked {
+      background: var(--accent);
+    }
+
+    .check-item input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 4px;
+      height: 8px;
+      border: solid #080b12;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .check-item input[type="checkbox"]:checked + span {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
     footer {
       text-align: center;
       padding: 0.9rem 1rem;
@@ -242,14 +307,19 @@
 <body>
   <main class="portal">
     <header class="glass">
-      <div class="tag">ZAMORA FAMILY LEAGUE</div>
-      <h1>Family Fantasy League 2026</h1>
-      <p class="header-sub">Welcome, family &amp; friends — glad you're here! 🏈</p>
+      <div class="tag">FAMILY LEAGUE HUB</div>
+      <h1>FFL 2026</h1>
+      <p class="header-sub">Welcome, family &amp; friends. Everything you need for the 2026 season is below.</p>
     </header>
 
     <section class="countdown glass" aria-labelledby="countdown-heading">
       <h2 id="countdown-heading">Draft Countdown</h2>
-      <p id="countdown-value" aria-live="polite">Loading timer...</p>
+      <div class="timer-grid" id="timer-container" aria-live="polite">
+        <div class="timer-block"><span class="timer-val" id="d-val">00</span><span class="timer-unit">Days</span></div>
+        <div class="timer-block"><span class="timer-val" id="h-val">00</span><span class="timer-unit">Hours</span></div>
+        <div class="timer-block"><span class="timer-val" id="m-val">00</span><span class="timer-unit">Mins</span></div>
+        <div class="timer-block"><span class="timer-val" id="s-val">00</span><span class="timer-unit">Secs</span></div>
+      </div>
       <p id="countdown-note">Target: Sunday, August 30, 2026 at 6:00 PM PST</p>
     </section>
 
@@ -269,25 +339,22 @@
       <h2 id="join-heading">Join the League</h2>
       <div class="join-body">
         <div>
-          <p class="join-desc">Click the invite link below to join on ESPN, then download the app so you can manage your team on the go.</p>
+          <p class="join-desc">Click the invite link below to join on ESPN, then download the app to manage your team on the go.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="https://fantasy.espn.com/football/league/join?leagueId=1901019533&inviteId=62def108-1768-4e2f-82d4-c03c1a91d680" target="_blank" rel="noopener noreferrer">
-              <!-- football icon -->
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="6" transform="rotate(-45 12 12)"/><line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="12" y1="2" x2="12" y2="22" transform="rotate(-45 12 12)"/></svg>
               Join on ESPN
             </a>
           </div>
         </div>
         <div>
-          <p class="join-desc">Download the free ESPN Fantasy Sports app to set lineups, check scores, and claim waivers from your phone.</p>
+          <p class="join-desc">Download the free ESPN Fantasy Sports app to set lineups, check live scores, and claim waivers from your phone.</p>
           <div class="btn-row">
             <a class="btn btn-store" href="https://play.google.com/store/apps/details?id=com.espn.fantasy.lm.football" target="_blank" rel="noopener noreferrer">
-              <!-- android icon -->
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.523 15.341a.6.6 0 1 0 0-1.2.6.6 0 0 0 0 1.2zm-11.046 0a.6.6 0 1 0 0-1.2.6.6 0 0 0 0 1.2zM3.184 8.4l1.56 3.12A2.4 2.4 0 0 0 7.2 13.2h9.6a2.4 2.4 0 0 0 2.456-1.68l1.56-3.12A9.6 9.6 0 0 0 12 4.8a9.6 9.6 0 0 0-8.816 3.6zm1.632-1.32A8.4 8.4 0 0 1 12 6a8.4 8.4 0 0 1 7.184 3.08L17.8 12H6.2L4.816 7.08zM7.2 14.4v3.6a1.2 1.2 0 0 0 2.4 0v-3.6H7.2zm7.2 0v3.6a1.2 1.2 0 0 0 2.4 0v-3.6h-2.4zM4.8 14.4v3.6a1.2 1.2 0 0 0 2.4 0v-3.6H4.8zm12 0v3.6a1.2 1.2 0 0 0 2.4 0v-3.6h-2.4z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.523 15.341a.6.6 0 1 0 0-1.2.6.6 0 0 0 0 1.2zm-11.046 0a.6.6 0 1 0 0-1.2.6.6 0 0 0 0 1.2zM3.184 8.4l1.56 3.12A2.4 2.4 0 0 0 7.2 13.2h9.6a2.4 2.4 0 0 0 2.456-1.68l1.56-3.12A9.6 9.6 0 0 0 12 4.8a9.6 9.6 0 0 0-8.816 3.6zm1.632-1.32A8.4 8.4 0 0 1 12 6a8.4 8.4 0 0 1 7.184 3.08L17.8 12H6.2L4.816 7.08z"/></svg>
               Google Play (Android)
             </a>
             <a class="btn btn-store" href="https://apps.apple.com/us/app/espn-fantasy-sports-more/id555376968" target="_blank" rel="noopener noreferrer">
-              <!-- apple icon -->
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               App Store (iPhone)
             </a>
@@ -299,71 +366,64 @@
     <section class="guide glass" aria-labelledby="guide-heading">
       <h2 id="guide-heading">First-Timer Guide</h2>
       <div class="guide-sections">
-
         <div class="guide-section">
-          <h3>🏈 What Is Fantasy Football?</h3>
+          <h3>What Is Fantasy Football?</h3>
           <ul>
-            <li>You pick a roster of <strong>real NFL players</strong> and earn points based on how they actually perform each Sunday.</li>
-            <li>Each week you go head-to-head against one other person in the league — highest score wins that matchup.</li>
-            <li>The season runs Weeks 1–14. The top 8 teams make the playoffs (Weeks 15–17).</li>
-            <li>You do <strong>not</strong> need to know everything about football to win — a little strategy and consistency goes a long way!</li>
+            <li>You pick a roster of <strong>real NFL players</strong> and earn points based on how they perform each Sunday.</li>
+            <li>Each week you go head-to-head against one other person in the league. Highest score wins that matchup.</li>
+            <li>The regular season runs Weeks 1 through 14. The top 8 teams make the playoffs (Weeks 15 through 17).</li>
+            <li>You do <strong>not</strong> need deep football knowledge to win. Consistency goes a long way.</li>
           </ul>
         </div>
 
         <div class="guide-section">
-          <h3>📋 Draft Day Tips</h3>
+          <h3>Draft Day Tips</h3>
           <ul>
-            <li><strong>Load up on RBs and WRs early</strong> — they score the most points and top players go fast.</li>
-            <li>Wait on QB and kicker — solid options are available in later rounds and it is not worth reaching early.</li>
-            <li>Target a second RB and WR before going after a TE — tight end is one of the deepest positions.</li>
-            <li>Do not panic if your favorite team's player goes early — there are always sleepers available.</li>
-            <li>Draft at least 2 RBs and 3 WRs in your first 7 picks. Depth wins championships.</li>
+            <li><strong>Load up on RBs and WRs early</strong>. They generate the majority of your weekly points.</li>
+            <li>Wait on QB and kicker. Depth at skill positions matters far more early in the draft.</li>
+            <li>Target a second RB and WR before drafting a Tight End.</li>
+            <li>Draft at least 2 RBs and 3 WRs in your first 7 picks to establish reliable depth.</li>
           </ul>
         </div>
 
         <div class="guide-section">
-          <h3>📅 Weekly Lineup Basics</h3>
+          <h3>Weekly Lineup Basics</h3>
           <ul>
-            <li><strong>Check your lineup every week</strong> — games lock Thursday night (Thursday Night Football) and Sunday morning.</li>
-            <li>Check injury reports Saturday night and Sunday morning — a player listed as "Questionable" or "Out" needs a replacement.</li>
-            <li>Check bye weeks — every team has one week off during the season. Never start a player on their bye week.</li>
-            <li>Recheck your lineup 30 minutes before games lock to catch any last-minute scratches.</li>
-            <li>Always have a full starting lineup set — leaving an empty slot scores you zero points.</li>
+            <li><strong>Check your lineup weekly</strong>. Games lock Thursday night and Sunday morning.</li>
+            <li>Check injury reports before kickoff. Swap out players marked <strong>"Out"</strong> or <strong>"Questionable"</strong>.</li>
+            <li>Watch bye weeks. Every team has one week off during the season. Never start a player on a bye week.</li>
+            <li>Always maintain a full starting lineup to prevent empty scoring slots.</li>
           </ul>
         </div>
 
         <div class="guide-section">
-          <h3>🔄 Waivers &amp; Free Agents</h3>
+          <h3>Waivers &amp; Free Agents</h3>
           <ul>
-            <li><strong>Waivers</strong> are how you pick up players who are not on anyone's team yet — a fresh pool of talent each week.</li>
-            <li>After Sunday games, injured or benched players get dropped, and breakout players get added.</li>
-            <li>You are given waiver priority — spend it wisely. Only use a top waiver claim for a player who can start for you right away.</li>
-            <li>Free agents (players not processed through waivers yet) are available to anyone, anytime — check back often.</li>
+            <li><strong>Waivers</strong> allow you to add unowned players off the free-agent pool each week.</li>
+            <li>Unclaimed players clear waivers every Wednesday morning.</li>
+            <li>Save high waiver priority for clear starters or breakout opportunities.</li>
           </ul>
         </div>
 
         <div class="guide-section">
-          <h3>💡 Scoring Overview</h3>
+          <h3>Scoring Overview</h3>
           <ul>
             <li><strong>Passing TD</strong>: 4 pts &nbsp;|&nbsp; <strong>Rushing/Receiving TD</strong>: 6 pts</li>
             <li><strong>Every 10 rushing/receiving yards</strong>: 1 pt &nbsp;|&nbsp; <strong>Every 25 passing yards</strong>: 1 pt</li>
-            <li><strong>Reception (PPR)</strong>: 1 pt per catch — this league uses PPR, so WRs and pass-catching RBs get a bonus.</li>
-            <li>Interceptions and fumbles lost <strong>cost</strong> your QB/RB points, so game script matters.</li>
-            <li>Field goals, extra points, and defensive plays also score — do not forget to roster a D/ST and kicker.</li>
+            <li><strong>Reception (PPR)</strong>: 1 pt per catch. Rewards pass-catching receivers and backs.</li>
+            <li>Field goals score 3, 4, 5, or 6 points based on distance.</li>
           </ul>
         </div>
 
         <div class="guide-section">
-          <h3>✅ Quick Weekly Checklist</h3>
-          <ul>
-            <li>☐ Set starting lineup by Thursday 5 PM PT (before Thursday Night Football).</li>
-            <li>☐ Check injury report Saturday — move questionable players to bench as backup.</li>
-            <li>☐ Browse waivers Wednesday night after weekly processing.</li>
-            <li>☐ Final lineup check Sunday morning by 10 AM PT.</li>
-            <li>☐ Check scores live on the ESPN app Sunday afternoon — it is half the fun!</li>
+          <h3>Quick Weekly Checklist</h3>
+          <ul class="checklist-ul">
+            <li><label class="check-item"><input type="checkbox"> <span>Set starting lineup by Thursday 5:00 PM PT.</span></label></li>
+            <li><label class="check-item"><input type="checkbox"> <span>Check injury report Saturday evening.</span></label></li>
+            <li><label class="check-item"><input type="checkbox"> <span>Review waiver claims Wednesday morning.</span></label></li>
+            <li><label class="check-item"><input type="checkbox"> <span>Final lineup check Sunday morning by 9:30 AM PT.</span></label></li>
           </ul>
         </div>
-
       </div>
     </section>
 
@@ -371,15 +431,14 @@
   </main>
 
   <script>
-    const targetTime = new Date('2026-08-30T18:00:00-08:00').getTime();
-    const countdownElement = document.getElementById('countdown-value');
+    const targetTime = new Date('2026-08-30T18:00:00-07:00').getTime();
 
     function renderCountdown() {
       const now = Date.now();
       const distance = targetTime - now;
 
       if (distance <= 0) {
-        countdownElement.textContent = 'Draft is live. Lock in your roster.';
+        document.getElementById('timer-container').innerHTML = '<div style="color: var(--accent); font-family: ui-monospace; font-weight: bold;">// DRAFT IS LIVE</div>';
         return;
       }
 
@@ -388,12 +447,15 @@
       const hour = 60 * minute;
       const day = 24 * hour;
 
-      const days = Math.floor(distance / day);
-      const hours = Math.floor((distance % day) / hour);
-      const minutes = Math.floor((distance % hour) / minute);
-      const seconds = Math.floor((distance % minute) / second);
+      const days = String(Math.floor(distance / day)).padStart(2, '0');
+      const hours = String(Math.floor((distance % day) / hour)).padStart(2, '0');
+      const minutes = String(Math.floor((distance % hour) / minute)).padStart(2, '0');
+      const seconds = String(Math.floor((distance % minute) / second)).padStart(2, '0');
 
-      countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      document.getElementById('d-val').textContent = days;
+      document.getElementById('h-val').textContent = hours;
+      document.getElementById('m-val').textContent = minutes;
+      document.getElementById('s-val').textContent = seconds;
     }
 
     renderCountdown();
