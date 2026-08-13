@@ -20,7 +20,7 @@ Modern static web portal for the Team Zamora family fantasy football league, des
 Because this project is a static site, you can preview it locally in either of these ways:
 
 ### Option 1: Open directly in browser
-1. Open `/home/runner/work/fantasy-football-site-src/fantasy-football-site-src/docs/index.html` in your browser.
+1. Open `docs/index.html` in your browser from your local clone.
 
 ### Option 2: Serve over a local HTTP server (recommended)
 From repository root:
