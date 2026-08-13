@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Zamora Operations | Family Fantasy League 2026</title>
+  <style>
+    :root {
+      --bg: #080b12;
+      --panel: rgba(14, 20, 34, 0.62);
+      --text: #d8e9f8;
+      --muted: #90a9bf;
+      --accent: #00f2fe;
+      --border: rgba(0, 242, 254, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(0, 242, 254, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at 20% 10%, rgba(0, 242, 254, 0.12), transparent 42%),
+        radial-gradient(circle at 80% 90%, rgba(0, 242, 254, 0.08), transparent 40%),
+        var(--bg);
+      background-size: 34px 34px, 34px 34px, auto, auto, auto;
+      line-height: 1.5;
+    }
+
+    .portal {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem 2.5rem;
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.34), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    }
+
+    header {
+      padding: 1.25rem 1.3rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+    }
+
+    .countdown {
+      padding: 1.25rem 1.3rem;
+    }
+
+    .countdown h2,
+    .specs h2,
+    .guide h2 {
+      margin-top: 0;
+      font-size: 1.15rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    #countdown-value {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: clamp(1.2rem, 4.2vw, 2rem);
+      font-weight: 700;
+      margin: 0.2rem 0 0;
+    }
+
+    #countdown-note {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .specs {
+      padding: 1.25rem 1.3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.8rem;
+      background: rgba(5, 15, 23, 0.62);
+    }
+
+    .card .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.28rem;
+    }
+
+    .card .value {
+      display: block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e8f9ff;
+    }
+
+    .guide {
+      padding: 1.25rem 1.3rem;
+    }
+
+    .guide ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .guide li {
+      color: #d1e7fa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 0.9rem 1rem;
+      color: #9ab3cb;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      border-top: 1px solid rgba(0, 242, 254, 0.24);
+    }
+  </style>
+</head>
+<body>
+  <main class="portal">
+    <header class="glass">
+      <div class="tag">// TEAM ZAMORA OPERATIONS</div>
+      <h1>Family Fantasy League 2026</h1>
+    </header>
+
+    <section class="countdown glass" aria-labelledby="countdown-heading">
+      <h2 id="countdown-heading">Draft Countdown</h2>
+      <p id="countdown-value" aria-live="polite">Loading timer...</p>
+      <p id="countdown-note">Target: Sunday, August 30, 2026 at 6:00 PM PST</p>
+    </section>
+
+    <section class="specs glass" aria-labelledby="specs-heading">
+      <h2 id="specs-heading">Draft Specs</h2>
+      <div class="grid">
+        <article class="card"><span class="label">Draft Date</span><span class="value">Aug 30</span></article>
+        <article class="card"><span class="label">Kickoff</span><span class="value">6:00 PM PST</span></article>
+        <article class="card"><span class="label">Platform</span><span class="value">ESPN</span></article>
+        <article class="card"><span class="label">Pick Clock</span><span class="value">90s</span></article>
+        <article class="card"><span class="label">Size</span><span class="value">12 Teams</span></article>
+        <article class="card"><span class="label">Playoffs</span><span class="value">8 Teams</span></article>
+      </div>
+    </section>
+
+    <section class="guide glass" aria-labelledby="guide-heading">
+      <h2 id="guide-heading">First-Timer Guide</h2>
+      <ul>
+        <li>Prioritize reliable starters at RB/WR before loading up your bench or backup QB options.</li>
+        <li>Check injury reports and bye weeks before kickoff so you do not start inactive players.</li>
+        <li>Set your weekly lineup early, then recheck 30 minutes before games lock.</li>
+        <li>Use waiver claims strategically each week to replace injured players and exploit breakout trends.</li>
+      </ul>
+    </section>
+
+    <footer class="glass">MOGSEC.COM ARCHITECTURE • POWERED BY D3FND • TEAMZAMORA.COM</footer>
+  </main>
+
+  <script>
+    const targetTime = new Date('2026-08-30T18:00:00-08:00').getTime();
+    const countdownElement = document.getElementById('countdown-value');
+
+    function renderCountdown() {
+      const now = Date.now();
+      const distance = targetTime - now;
+
+      if (distance <= 0) {
+        countdownElement.textContent = 'Draft is live. Lock in your roster.';
+        return;
+      }
+
+      const second = 1000;
+      const minute = 60 * second;
+      const hour = 60 * minute;
+      const day = 24 * hour;
+
+      const days = Math.floor(distance / day);
+      const hours = Math.floor((distance % day) / hour);
+      const minutes = Math.floor((distance % hour) / minute);
+      const seconds = Math.floor((distance % minute) / second);
+
+      countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    renderCountdown();
+    setInterval(renderCountdown, 1000);
+  </script>
+</body>
+</html>
