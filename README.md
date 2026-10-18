@@ -10,7 +10,7 @@ Modern static web portal for the Team Zamora family fantasy football league, des
 │   └── workflows/
 │       └── deploy.yml      # GitHub Actions workflow for Pages deploys
 ├── docs/
-│   ├── CNAME               # Custom domain: teamzamora.com
+│   ├── CNAME               # Custom domain: ffl.teamzamora.com
 │   └── index.html          # Single-page static portal (HTML/CSS/JS)
 └── README.md
 ```
@@ -38,12 +38,12 @@ Deployment is automated by `.github/workflows/deploy.yml`.
 - Trigger: every push to `main` (plus optional manual trigger via `workflow_dispatch`)
 - Source artifact: `docs/` directory
 - Deploy action: `actions/deploy-pages`
-- Domain: `teamzamora.com` via `docs/CNAME`
+- Domain: `ffl.teamzamora.com` via `docs/CNAME`
 
 ### One-time repository settings check
 In GitHub repository settings:
 1. Go to **Settings → Pages**.
 2. Ensure **Source** is set to **GitHub Actions**.
-3. Confirm DNS for `teamzamora.com` points to GitHub Pages.
+3. Confirm DNS for `ffl.teamzamora.com` points to GitHub Pages.
 
 After that, every push to `main` will publish the latest static portal automatically.
